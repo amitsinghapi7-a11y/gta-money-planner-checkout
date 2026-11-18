@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GTA Money Planner Pro</title>
+
+    <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+
+    <style>
+        body {
+            background: #171322;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 40px 15px;
+        }
+
+        .card {
+            background: #251d35;
+            max-width: 380px;
+            margin: 20px auto;
+            padding: 25px;
+            border-radius: 14px;
+        }
+
+        button {
+            width: 100%;
+            padding: 13px;
+            margin-top: 12px;
+            border: none;
+            border-radius: 8px;
+            background: #8b5cf6;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #7543df;
+        }
+
+        #status {
+            font-size: 13px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>GTA Money Planner Pro</h1>
+    <p>Unlock advanced money planning features.</p>
+
+    <div class="card">
+        <h2>Pro Monthly</h2>
+        <h3>$3.99 / month</h3>
+        <button onclick="buyMonthly()">Subscribe Monthly</button>
+    </div>
+
+    <div class="card">
+        <h2>Pro Lifetime</h2>
+        <h3>$14.99 one-time</h3>
+        <button onclick="buyLifetime()">Get Lifetime Access</button>
+    </div>
+
+    <p id="status">Loading checkout...</p>
+
+    <script>
+        Paddle.Environment.set("sandbox");
+
+        Paddle.Initialize({
+            token: "test_9ec9e9f70a2b4d4793c6868af67"
+        });
+
+        document.getElementById("status").textContent =
+            "Checkout is ready.";
+
+        function buyMonthly() {
+            Paddle.Checkout.open({
+                items: [{
+                    priceId: "pri_01m7qmdd9rpjkt88fwaj2semm6",
+                    quantity: 1
+                }]
+            });
+        }
+
+        function buyLifetime() {
+            Paddle.Checkout.open({
+                items: [{
+                    priceId: "pri_01m7qn75qgqxkvpj2bd8frx1nd",
+                    quantity: 1
+                }]
+            });
+        }
+    </script>
+
+</body>
+</html>
