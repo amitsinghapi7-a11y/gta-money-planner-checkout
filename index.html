@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,14 +54,20 @@
 
     <div class="card">
         <h2>Pro Monthly</h2>
-        <h3>$3.99 / month</h3>
+        <h3>$6.99 / month</h3>
         <button onclick="buyMonthly()">Subscribe Monthly</button>
     </div>
 
     <div class="card">
-        <h2>Pro Lifetime</h2>
-        <h3>$14.99 one-time</h3>
-        <button onclick="buyLifetime()">Get Lifetime Access</button>
+        <h2>Pro 6 Months</h2>
+        <h3>$24.99 / 6 months</h3>
+        <button onclick="buySixMonths()">Get 6 Months</button>
+    </div>
+
+    <div class="card">
+        <h2>Pro 12 Months</h2>
+        <h3>$39.99 / year</h3>
+        <button onclick="buyTwelveMonths()">Get 12 Months</button>
     </div>
 
     <p id="status">Loading checkout...</p>
@@ -80,47 +85,58 @@
         function buyMonthly() {
             Paddle.Checkout.open({
                 items: [{
-                    priceId: "pri_01m7qmdd9rpjkt88fwaj2semm6",
+                    priceId: "pri_01m847ra9pepsgp6pa0mfnp75n",
                     quantity: 1
                 }]
             });
         }
 
-        function buyLifetime() {
+        function buySixMonths() {
             Paddle.Checkout.open({
                 items: [{
-                    priceId: "pri_01m7qn75qgqxkvpj2bd8frx1nd",
+                    priceId: "pri_01m8484gy4x992dpckd2e6nyvb",
+                    quantity: 1
+                }]
+            });
+        }
+
+        function buyTwelveMonths() {
+            Paddle.Checkout.open({
+                items: [{
+                    priceId: "pri_01m848997bartv3hxespd13j34",
                     quantity: 1
                 }]
             });
         }
     </script>
-<footer style="
-    max-width: 600px;
-    margin: 45px auto 0;
-    padding-top: 20px;
-    border-top: 1px solid #493b60;
-    font-size: 13px;
-    line-height: 2;
-">
-    <p>
-        <a href="terms.html" style="color: #b58cff;">Terms of Service</a> |
-        <a href="privacy.html" style="color: #b58cff;">Privacy Policy</a> |
-        <a href="refund.html" style="color: #b58cff;">Refund Policy</a>
-    </p>
 
-    <p>
-        Support:
-        <a href="mailto:gtamoneyplanner.support@gmail.com" style="color: #b58cff;">
-            gtamoneyplanner.support@gmail.com
-        </a>
-    </p>
+    <footer style="
+        max-width: 600px;
+        margin: 45px auto 0;
+        padding-top: 20px;
+        border-top: 1px solid #493b60;
+        font-size: 13px;
+        line-height: 2;
+    ">
+        <p>
+            <a href="terms.html" style="color: #b58cff;">Terms of Service</a> |
+            <a href="privacy.html" style="color: #b58cff;">Privacy Policy</a> |
+            <a href="refund.html" style="color: #b58cff;">Refund Policy</a>
+        </p>
 
-    <p style="color: #aaa;">
-        GTA Money Planner is an independent fan-made tool and is not affiliated with Rockstar Games.
-    </p>
+        <p>
+            Support:
+            <a href="mailto:gtamoneyplanner.support@gmail.com" style="color: #b58cff;">
+                gtamoneyplanner.support@gmail.com
+            </a>
+        </p>
 
-    <p style="color: #aaa;">&copy; 2026 GTA Money Planner.</p>
-</footer>
+        <p style="color: #aaa;">
+            GTA Money Planner is an independent fan-made tool and is not affiliated with Rockstar Games.
+        </p>
+
+        <p style="color: #aaa;">&copy; 2026 GTA Money Planner.</p>
+    </footer>
+
 </body>
 </html>
